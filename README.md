@@ -1,4 +1,4 @@
-#School Projects
+# School Projects
 
 This contains all the school projects done by
 ### Jamie Lu
