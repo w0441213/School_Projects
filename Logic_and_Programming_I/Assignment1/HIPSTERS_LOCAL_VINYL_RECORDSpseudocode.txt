@@ -1,0 +1,36 @@
+IMPERIAL TO METRIC CONVERTER
+
+STEP 1: Identify the variables.
+
+	VARIABLES:
+	1) Customer Name
+	2) Distance in Kilometers
+	3) Cost of the records purchased
+	4) Delivery cost
+	5) Purchase cost
+	6) Total cost
+
+STEP 2: Display/Print the welcome message and information.
+
+STEP 3: Initialize the variables
+
+STEP 4: Ask the user for the input: customer name, distance in kilometers, and cost of the records purchased
+
+STEP 5: Cast the variables to be able to use them in the equations
+
+STEP 6: Equations
+     
+    A6:	Get the delivery cost:
+		delivery cost = distance in kilometers * 15 (15 is the rate per kilometer)
+   
+    B6: Get the purchase cost:
+		Purchase cost = cost of Records * 1.14 (14% sales tax)
+   
+    C6: Get the total cost:
+		total Cost = delivery Cost + purchase Cost
+
+STEP 7: Display/Print the formatted output using outString, all of which in 2 decimal places.
+	Purchase summary for "Customer Name"
+	Delivery Cost: $ ""
+	Purchase Cost: $ ""
+	Total Cost:    $ ""

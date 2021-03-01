@@ -1,0 +1,37 @@
+WEEKLY LOAN CALCULATOR
+STEP 1: Identify the variables
+
+		VARIABLES:
+		1)loan amount
+		2)interest rate
+		3)number of years
+		4)weekly payment amount
+
+STEP 2: Display/print the welcome and information message
+
+STEP 3: Initialize the variables
+
+STEP 4: Ask the user to put in the input needed for the equation: loan amount, interest rate, and number of years
+
+STEP 5: Cast the variables to integer or float to be able to use it in the equation
+
+	loan amount    = float
+	interest rate  = float
+	number of years= integer
+	weekly payments= float
+
+STEP 6: Equations
+	
+    A6: Getting the value of "i" for the equation
+	I= (interest rate/5200)
+    
+    B6: Getting the weekly payment amount
+	Weekly payment = 1+I
+		       = (1+I)**(-52*number of years)
+		       = 1 - ((1+I)**(-52*number of years))
+		       = I / (1-(1+I)**(-52*number of years))
+		       = (I/(1-(1+I)**(-52*number of years))) * loan amount
+
+STEP 7: Format the weekly payment amount to 2 decimal places
+
+STEP 8: Print the output: Formatted Weekly Payment Amount

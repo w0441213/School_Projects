@@ -1,0 +1,46 @@
+IMPERIAL TO METRIC CONVERTER
+
+STEP 1: Identify the variables.
+
+	VARIABLES:
+	1) TONS
+	2) STONES
+	3) POUNDS
+	4) OUNCES
+	5) TOTAL OUNCES
+	6) TOTAL KILOS
+	7) METRIC TONS
+	8) LEFTOVER GRAMS
+	9) LEFTOVER TONS
+	10)LEFTOVER KILOS
+
+STEP 2: Display/Print the welcome message and information.
+
+STEP 3: Initialize the variables
+
+STEP 4: Ask the user for the input: tons, stones, pounds, ounces
+
+STEP 5: Cast the variables to be able to use them in the equations
+
+STEP 6: Equations
+     
+    A6:	Get the total ounces:
+		total ounces = (35840*Tons) + (224*Stones) + (16*Pounds) + Ounces
+   
+    B6: Get the total kilos:
+		total kilos = total ounces / 35.274
+   
+    C6: Get the metric tons and cast to integer:
+		metric tons = int(total kilos/1000)
+   
+    D6: Get the leftover tons to use for calculating the leftover kilos & initialize as a float
+		leftover tons = float(total kilos/1000) - metric tons
+
+    E6: Get the leftover kilos to use for the final output
+		leftover kilos = leftover tons*1000
+
+    F6: Get the leftover grams.. subtract the float value for kilos by the integer value for kilos to get the leftover grams
+		leftover grams = (leftover kilos - int(leftover kilos)
+
+STEP 7: Format the Leftover Grams to 1 decimal place
+STEP 8: Display/Print the output: metric weight
