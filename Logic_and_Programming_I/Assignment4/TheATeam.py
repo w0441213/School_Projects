@@ -1,0 +1,86 @@
+#Don't forget to rename this file after copying the template
+#for a new program!
+"""
+Student Name:   Jamie Lu
+Program Title:  The A Team
+Description:    Program that reads the text from a provided text file into a list, displays the text onscreen,
+                makes some alterations to the text and outputs the changed text to the screen,
+                then saves the altered text as new file.
+"""
+
+#Function for opening file and setting the access mode to read
+def readingFile(p_file):
+    content = []
+    for line in open(p_file, "r"):
+        content.append(line.replace("\n", ""))
+    return content
+
+import random
+
+def main(): #<-- Don't change this line!
+
+    #Print the original text
+    print("-------------------------------------------------")
+    print("Original Text")
+    print("-------------------------------------------------")
+    #Use the function to open and read the file
+    lines = readingFile("ateam_Original.txt")
+    #Print each line of the original text using a for loop
+    for line in lines:
+        print(line)
+
+    print("")
+
+    #Print the altered text
+    print("-------------------------------------------------")
+    print("Altered Text")
+    print("-------------------------------------------------")
+
+    #create a new file for the altered text and use write as the access mode
+    newATeam = open("newATeam.txt", "w")
+
+    #make a variable for the conditions for casing
+    maxNum = 20
+
+    #have the computer choose a random line
+    randomLine = random.choice(lines)
+
+    #go through each line
+    for counter in range(len(lines)):
+        eachLine = lines[counter]
+
+        #if the line is not the randomly chosen line, print out the line
+        if eachLine != randomLine:
+
+            #if the number of characters in the line is greater than the maximum number (20), make it lowercase
+            if len(eachLine) > maxNum:
+                print(counter + 1, eachLine.lower())
+
+                #write the line to the new file
+                newATeam.write(str(counter+1) + " " + eachLine.lower() + "\n")
+
+            #if the number of characters in the line is less than the maximum number (20), make it uppercase
+            elif len(eachLine) <= maxNum:
+                print(counter + 1, eachLine.upper())
+
+                #write the line to the new file
+                newATeam.write(str(counter+1) + " " + eachLine.upper() + "\n")
+
+        #if the line is the randomly chosen line, print out a blank
+        elif eachLine == randomLine:
+            print(" ")
+
+    newATeam.close()
+
+    
+
+    #Your code ends on the line above
+
+
+
+#Do not change any of the code below!
+
+if __name__ == "__main__":
+
+    main()
+

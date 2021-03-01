@@ -1,0 +1,10 @@
+PSEUDOCODE FOR THE A TEAM:
+1) Open the file
+2) Read the file
+3) Display each line of the original text
+4) Determine the length of each line (number of characters)
+5) Determine if the length of each line is > or <= 20.
+6) If the line is less than or equal to 20, display the line with all lowercase letters
+7) If the line is greater than 20, display the line with all uppercase letters
+8) Display each line of the altered/new text
+9) Create a new file with the altered/new text
