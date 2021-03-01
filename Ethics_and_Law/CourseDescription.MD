@@ -1,0 +1,4 @@
+This course will explore what it means to use analytics ethically and how to think about its ethical implications. The approach is from the perspective of professionals who lead analytics-oriented teams or organizations, and whose success depends on the ability to recognize the ethical issues at stake and resolve these to the satisfaction of multiple stakeholders. This course provides an overview of current emerging Canadian legislation affecting information technology and management, with a focus on the intersection of these legal principles with business ethics. Learners will practice thinking through and processing legal problems consistent with ethical norms and analyze business risk, taking into consideration ethical issues, to arrive at business decisions.
+
+
+Retrieved from https://www.nscc.ca/learning_programs/programs/plandescr.aspx?prg=ITDB&pln=ITDBADMIN
