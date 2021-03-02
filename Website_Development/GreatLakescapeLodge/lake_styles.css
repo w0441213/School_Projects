@@ -1,0 +1,177 @@
+﻿@charset "utf-8";
+@font-face {
+  font-family: 'cac_champagne'; src:url('cac_champagne.woff') format('woff');
+}
+@font-face{
+  font-family: 'DobkinPlain'; src:url('DobkinPlain.woff') format('woff')
+}
+
+/*
+   New Perspectives on HTML5 and CSS3, 7th Edition
+   Tutorial 2
+   Case Problem 4
+   
+   Great Lakescape Lodge Style Sheet
+   Author: Jamie Lu
+   Date:   February 9, 2020
+   
+   Filename: lake_styles.css
+
+*/
+
+
+/* Styles */
+/* Links */
+a {
+	color:#836790;
+	text-decoration: none;
+}
+
+/* When user hovers over a link */
+a:hover {
+	color: white;
+}
+
+/* Background Image of the Page*/
+body {
+	background-image: url("hotel-1500509.jpg"); /* photo by oli mohd from FreeImages */
+	background-repeat: no-repeat;
+	background-size: 1700px 800px;
+	background-attachment: fixed;
+}
+
+/* Header Navigation */
+#menu > nav a {
+	background-color: #7d00ab;
+	color: white;
+	font-family: 'Gill Sans', sans-serif;
+	padding-top: 0.4em;
+	padding-bottom: 0.4em;
+}
+
+
+/* Sections */
+
+/* Left Section */
+.paraLeft {
+	font-family: tahoma;
+	color: black;
+	text-align: justify;
+	padding-left: 2em;
+	padding-right: 2em;
+}
+
+#para1 {
+	margin-top: 2em;
+}
+
+#para4 {
+	margin-bottom: 4em;
+}
+
+body > section#leftcol {
+	background-color: #ffc881;
+	padding-bottom: 4em;
+	opacity: 0.9;
+}
+
+#paraHeading{
+	font-family: 'cac_champagne';
+	font-size: 3.5em;
+	text-align: center;
+	margin-top: 0.2em;
+	margin-bottom: 0.2em;
+}
+
+section#leftcol .asideHeading {
+	text-align: center;
+	font-family: tahoma;
+	font-size: 20px;
+}
+
+section#leftcol aside h2 {
+	text-align: center;
+	font-family: tahoma;
+	font-size: 17px;
+}
+
+#asideleft {
+	background-color: #cfae93;
+	font-family: tahoma;
+	font-size: 15px;
+	padding-bottom: 7em;
+}
+
+#asideList {
+	list-style-type: square;
+}
+
+
+#asideright {
+	background-color: #ffa600;
+	font-family: tahoma;
+	font-size: 15px;
+}
+
+.paraRight {
+	margin: 1.5em;
+}
+
+#asideHeading1 {
+	text-align: center;
+}
+
+
+/*Right Section*/
+body > section#rightcol {
+	background-color: rgba(232,202,230,0.8);
+	color:white;
+	padding-bottom: 20em;
+}
+
+.sideHeadings{
+	color: #7d6f4a;
+	font-family: 'DobkinPlain';
+	font-size: 2em;
+	margin-left: 1em;
+	margin-bottom: 0em;
+}	
+
+.noBulletList {
+	color: #7d6f4a;
+	font-size: 1em;
+	font-family: Calibri;
+	list-style-type: none;
+	text-decoration: none;
+}
+
+
+blockquote::before {
+	content: open-quote;
+	font-family: Cochin;
+	font-size: 1.7em;
+	font-weight: bold;
+	color: #875c99;
+}
+
+blockquote::after {
+	content: close-quote;
+	font-family: Cochin;
+	font-size: 1.7em;
+	font-weight: bold;
+	color: #875c99;
+}
+
+blockquote {
+	font-family: Cochin;
+	font-size: 1.1em;
+	font-weight: bold;
+	color: #775287;
+}
+
+
+/* Footer */
+#footer {
+	background-color: #6e6b6b;
+	color: white;
+}
