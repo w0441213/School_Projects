@@ -1,0 +1,191 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<!--
+    New Perspectives on HTML5 and CSS3, 7th Edition
+    Tutorial 3
+    Case Problem 4
+    
+    Park City Gazette
+    Author: Jamie Lu
+    Date:   February 26, 2020
+
+    Filename: pcg_front.html
+   -->
+
+   <meta charset="utf-8"/>
+   <title>Park City Gazette</title>
+   <link href="pcg_paper2.css" rel="stylesheet">
+
+</head>
+
+
+<body>
+    <header>
+        <img src="pcglogo.jpg" alt="The Park City Gazette" />
+    </header>
+
+    <div id="leftContent">
+        <section class = "leftColumn">
+
+            <h1 id = "topNewsHeading"> 
+                Local Woman Wins Marathon
+            </h1>
+            <img id="marathonWinner" src="blake.jpg" alt="Marathon winner" />  
+            <p class = "topNews" id="para1">  
+                Estes Park native Laura Blake won the 27th Front Range Marathon over an elite field of the best long-distance runners </br>
+                in the country. Laura's time of 2 hr. 28 min. 21 sec. was only 2 minutes off the women's course record set last year </br>
+                by Sarah Rawlings. Kathy Lasker and Lisa Peterson finished second and third, respectively. Laura's victory came on the heels</br>
+                of her performance at the NCAA Track and Field Championships, in which she placed second running for Colorado State.</br>
+            </p>
+            <p class = "topNews" id="para2">
+                In an exciting race, Peter Teagan of San Antonio, Texas, used a finishing kick to win the men's marathon for the second </br>
+                straight year, in a time of 2 hr. 12 min. 34 sec. Ahead for much of the race, Kyle Wills of Billings, Montana, finished second </br> 
+                when he could not match Teagan's finishing pace. Jason Wu of Boulder, Colorado, placed third in a very competitive field.</br>
+            <p class = "topNews" id="para3">
+                This year's race through downtown Boulder boasted the largest field in the marathon's history, with over 9500 men and </br> 
+                6700 women competing. Race conditions were perfect with low humidity and temperatures that never exceeded 85 degrees.</br>
+            </p>
+
+            <h1 class = "subNewsHeading" id="headingA">
+                Highway 7 Reopens
+            </h1>
+
+            <p class = "subNews" id="articleA">
+                Highway 7 will reopen this Friday, </br>
+                June 3rd, after a final safety inspection.</br>
+                A late blizzard delayed road crews, </br>
+                marking this as one of the latest dates on </br>
+                record for the highway's reopening.</br>
+                </br>
+                Rising to an elevation of over 12,000 feet, </br>
+                Highway 7 is a main link between Estes Park </br>
+                and Grand Lake. The reopening of the road is one </br>
+                 of the annual signs that summer is near and the </br>
+                 tourist season will soon be upon us!</br>
+
+                <!--Free image from: https://www.freeimages.com/photo/chicago-1230916-->
+                <img id="highway" src="highway.jpg" alt="Highway" />
+
+            </p>
+
+
+
+            <h1 class = "subNewsHeading" id="headingB">
+                Cougar Sightings Increase 
+            </h1>
+
+            <p class = "subNews" id="articleB">
+                Cougar sightings have increased 40% in the Este Park </br>
+                area according to a report released yesterday by the state DNR.</br>
+                In the last month alone, there were ten sightings in Estes Park </br>
+                and the surrounding communities of Grand Lake and Pinewood Springs.</br>
+                This compares to only twelve sightings for the entire spring of last year.</br>
+                </br>
+                Reasons for the growing number of cougar sightings include </br>
+                increasing encroachment by people into former wildlife habitats and </br> 
+                new wildlife regulations that result in decreasing numbers of elk </br>
+                and deer being taken by hunters. Cougars may be wandering into </br>
+                developed areas, following the herds.</br>
+                </br>
+                DNR spokesman Steve Tasker asks residents to call the DNR report </br>
+                line at 555-6981 if they believe they have seen a cougar </br>
+                or any large predatory animal. Two fatalities have already </br>
+                occurred in the west this year from cougar attacks.</br>
+            </p>
+
+            <h1 class = "subNewsHeading" id="headingC">
+                If You Encounter a Cougar 
+            </h1>
+
+            <p class = "subNews" id="articleC">
+                Stop, stand tall, and don't run. A cougar's instinct is to chase.</br>
+
+                Try to appear larger than the cougar by raising your arms.</br>
+
+                Back away slowly, always keeping eye contact.</br>
+
+                If the cougar displays aggressive behavior, shout and wave your arms. </br>
+                
+                Convince the cougar that you are not prey, but a potential danger.</br>
+
+                In case of an attack, stay on your feet and fight back aggressively. </br>
+            </p>
+        
+        </section>
+    </div>
+
+    <nav>
+        <div id="sideNav">
+            <div class="dropdown">
+                <button id="dropdownHead">
+                    Stories Inside &#128317;
+                </button>
+            
+                <div class="dropdown-content">          
+                    <ul class="dropList">
+                        <li><a href="#">Complete Marathon Results</a></li>
+                        <li><a href="#">National Park Acquires Land</a></li>
+                        <li><a href="#">School Board Election Results</a></li>
+                        <li><a href="#">Spending Referendum Defeated</a></li>
+                        <li><a href="#">Graduation Awards</a></li>
+                        <li><a href="#">New Highway Proposed</a></li>
+                        <li><a href="#">Camping Tips</a></li>
+                        <li><a href="#">Cougar Sightings Increase </a></li>
+                        <li><a href="#">Editorials</a></li>
+                        <li><a href="#">Park City Profile</a></li>
+                    </ul>
+                </div>    
+            </div>    
+    
+            <ul class="sideList" id="sideListA">
+                <li><a href="#">Home Page</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">Local</a></li>
+                <li><a href="#">State</a></li>
+                <li><a href="#">National</a></li>
+                <li><a href="#">International</a></li>
+                <li><a href="#">Sports</a></li>
+                <li><a href="#">Weather</a></li>
+            </ul>
+
+            <ul class="sideList">
+                <li><a href="#">Classifieds</a></li>
+                <li><a href="#">For Sale</a></li>
+                <li><a href="#">Wanted</a></li>
+                <li><a href="#">Employment</a></li>
+                <li><a href="#">Real Estate</a></li>
+                <li><a href="#">Personal</a></li>
+            </ul>
+
+            <ul class="sideList">
+                <li><a href="#">Tourism</a></li>
+                <li><a href="#">Attractions</a></li>
+                <li><a href="#">Events</a></li>
+                <li><a href="#">Parks</a></li>
+                <li><a href="#">Camping</a></li>
+            </ul>
+
+            <ul class="sideList">
+                <li><a href="#">Subscriptions</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+            
+        </nav>
+    </div>
+
+    <div id ="footer">
+        <footer>
+            <em>Park City Gazette</em> &copy; &nbsp;&nbsp;&nbsp; &#9702;
+            &nbsp;&nbsp;&nbsp;
+            801 Elkhart Avenue &nbsp;&nbsp;&nbsp; &#9702;
+            &nbsp;&nbsp;&nbsp;
+            Estes Park, CO 80511 &nbsp;&nbsp;&nbsp; &#9702;
+            &nbsp;&nbsp;&nbsp;
+            1 (800) 555-2918 
+        </footer>
+    </div>
+
+</body>
+
+</html>
