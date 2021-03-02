@@ -1,0 +1,15 @@
+# Creating the hash tables with each student's information
+$a=@{"FName"="Bob";"LName"="Marley";"Genre"="Reggae"; "Grade"="A"}
+$b=@{"FName"="Sheryl";"LName"="Crow";"Genre"="Pop"; "Grade"="B"}
+$c=@{"FName"="Halsey";"LName"="Smith";"Genre"="Pop"; "Grade"="A"}
+$array = $a, $b, $c
+
+# Loop and Conditions
+Foreach ($e in $array.GetEnumerator()) {
+    if ($e.Grade -ieq "A") {
+        "$($e.FName) $($e.LName), $($e.Genre), PASS"
+        }
+    else {
+        "$($e.FName) $($e.LName), $($e.Genre), FAIL"
+    }
+}
