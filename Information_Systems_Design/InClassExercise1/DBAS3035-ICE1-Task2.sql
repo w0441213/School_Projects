@@ -1,0 +1,163 @@
+USE [COVID_BackEnd]
+GO
+
+/****** Object:  Table [dbo].[Age]    Script Date: 2021-02-03 10:05:12 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Age](
+	[AgeGroupID] [int] IDENTITY(1,1) NOT NULL,
+	[AgeName] [nvarchar](255) NULL,
+ CONSTRAINT [PK_Age] PRIMARY KEY CLUSTERED 
+(
+	[AgeGroupID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[Contact](
+	[ContactID] [int] IDENTITY(1,1) NOT NULL,
+	[ContactInfo] [nvarchar](255) NULL,
+ CONSTRAINT [PK_Contact] PRIMARY KEY CLUSTERED 
+(
+	[ContactID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[Country](
+	[CountryID] [int] IDENTITY(1,1) NOT NULL,
+	[CountryName] [nvarchar](255) NULL,
+ CONSTRAINT [PK_Country] PRIMARY KEY CLUSTERED 
+(
+	[CountryID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[Gender](
+	[GenderID] [int] IDENTITY(1,1) NOT NULL,
+	[GenderType] [nvarchar](255) NULL,
+ CONSTRAINT [PK_Gender] PRIMARY KEY CLUSTERED 
+(
+	[GenderID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[Patient](
+	[PatientID] [int] IDENTITY(1,1) NOT NULL,
+	[Patient_FName] [nvarchar](255) NULL,
+	[Patient_LName] [nvarchar](255) NULL,
+	[Patient_HCN] [int] NULL,
+	[Patient_DOB] [datetime] NULL,
+ CONSTRAINT [PK_Patient] PRIMARY KEY CLUSTERED 
+(
+	[PatientID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[PatientIntake](
+	[PatientintakeID] [int] IDENTITY(1,1) NOT NULL,
+	[AgeID] [int] NULL,
+	[ContactID] [int] NULL,
+	[CountryiD] [int] NULL,
+	[GenderID] [int] NULL,
+	[PatientID] [int] NULL,
+	[SeverityID] [int] NULL,
+ CONSTRAINT [PK_PatientIntake] PRIMARY KEY CLUSTERED 
+(
+	[PatientintakeID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[PatientSymptom](
+	[SymptomID] [int] NOT NULL,
+	[PatientIntakeID] [int] NOT NULL,
+ CONSTRAINT [PK_PatientSymptom] PRIMARY KEY CLUSTERED 
+(
+	[SymptomID] ASC,
+	[PatientIntakeID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[Severity](
+	[SeverityID] [int] IDENTITY(1,1) NOT NULL,
+	[SeverityLevel] [nvarchar](255) NULL,
+ CONSTRAINT [PK_Severity] PRIMARY KEY CLUSTERED 
+(
+	[SeverityID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[Symptom](
+	[SymptomID] [int] IDENTITY(1,1) NOT NULL,
+	[SymptomName] [nvarchar](255) NULL,
+	[WHOIdentified_Pry] [bit] NOT NULL,
+ CONSTRAINT [PK_Symptom] PRIMARY KEY CLUSTERED 
+(
+	[SymptomID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[PatientIntake]  WITH CHECK ADD  CONSTRAINT [FK_PatientIntake_CountryID] FOREIGN KEY([CountryiD])
+REFERENCES [dbo].[Country] ([CountryID])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+
+ALTER TABLE [dbo].[PatientIntake] CHECK CONSTRAINT [FK_PatientIntake_CountryID]
+GO
+
+ALTER TABLE [dbo].[PatientIntake]  WITH CHECK ADD  CONSTRAINT [FK_PatientIntake_PatientIntakeAge] FOREIGN KEY([AgeID])
+REFERENCES [dbo].[Age] ([AgeGroupID])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+
+ALTER TABLE [dbo].[PatientIntake] CHECK CONSTRAINT [FK_PatientIntake_PatientIntakeAge]
+GO
+
+ALTER TABLE [dbo].[PatientIntake]     
+ADD CONSTRAINT [FK_PatientIntake_PatientIntakeContactID] FOREIGN KEY (ContactID)     
+    REFERENCES [dbo].[Contact] (ContactID)     
+    ON DELETE CASCADE    
+    ON UPDATE CASCADE  
+GO
+
+ALTER TABLE [dbo].[PatientIntake]     
+ADD CONSTRAINT [FK_PatientIntake_PatientIntakeGenderID] FOREIGN KEY (GenderID)     
+    REFERENCES [dbo].[Gender] (GenderID)     
+    ON DELETE CASCADE    
+    ON UPDATE CASCADE  
+GO
+
+ALTER TABLE [dbo].[PatientIntake]     
+ADD CONSTRAINT [FK_PatientIntake_PatientIntakePatientID] FOREIGN KEY (PatientID)     
+    REFERENCES [dbo].[Patient] (PatientID)     
+    ON DELETE CASCADE    
+    ON UPDATE CASCADE  
+GO
+
+ALTER TABLE [dbo].[PatientIntake]     
+ADD CONSTRAINT [FK_PatientIntake_PatientIntakeSeverityID] FOREIGN KEY (SeverityID)     
+    REFERENCES [dbo].[Severity] (SeverityID)     
+    ON DELETE CASCADE    
+    ON UPDATE CASCADE  
+GO
+
+ALTER TABLE [dbo].[PatientSymptom]     
+ADD CONSTRAINT [FK_PatientSymptom_PatientSymptomSymptomID] FOREIGN KEY (SymptomID)     
+    REFERENCES [dbo].[Symptom] (SymptomID)     
+    ON DELETE CASCADE    
+    ON UPDATE CASCADE  
+GO
+
