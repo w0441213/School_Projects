@@ -2,7 +2,7 @@
 
 This contains all the school projects done by
 ### Jamie Lu
-a Database Administration student at NSCC.
+a Database Administration student.
 
 
 Please note that some projects may not have been uploaded due to file size restrictions.
